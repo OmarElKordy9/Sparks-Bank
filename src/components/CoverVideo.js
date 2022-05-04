@@ -135,7 +135,7 @@ const CoverVideo = () => {
             </div>
             <motion.h2 variants ={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="2">Fast . Secure . No Fees</motion.h2>
             <ScrollContainer>
-                <Link to="/">
+                <Link to="../sections/About">
                 <motion.h3 variants ={item} data-scroll-speed="1">Scroll down</motion.h3>
                 <motion.img variants ={item} data-scroll-speed="1" src={ScrollImg} alt="Scroll"/>
                 </Link>

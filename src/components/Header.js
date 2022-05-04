@@ -53,7 +53,7 @@ a{
     }
     &:hover::after{
         width: 100%;
-        background: white;
+        background: yellow;
 
     }
 }
