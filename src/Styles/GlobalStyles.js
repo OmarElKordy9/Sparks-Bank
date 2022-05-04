@@ -21,6 +21,11 @@ a{
     color: inherit;
     text-decoration: none;
 }
+
+img{
+    width: 100%;
+    height: auto;
+}
 `
 
 export default GlobalStyles;

@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import MainVideo from '../assets/visa laptop.mp4';
 import ScrollImg from '../assets/scroll-down.png';
-import "@fontsource/audiowide"
+import "@fontsource/audiowide";
+import { Link } from 'react-router-dom';
 
 const VideoConntaier = styled.section`
 width: 100%;
@@ -40,10 +41,21 @@ justify-content: center;
 align-items: center;
 color: ${props => props.theme.text};
 
+
 h1{
 font-family: 'Audiowide';
 font-size: ${props => props.theme.fontBig};
 text-shadow: 1px 1px 1px ${props => props.theme.body};
+
+@media only Screen and (max-width: 70em){
+    font-size: 8rem;
+}
+@media only Screen and (max-width: 55em){
+    font-size: 6rem;
+}
+@media only Screen and (max-width: 41em){
+    font-size: 4rem;
+}
 }
 
 h2{
@@ -59,6 +71,15 @@ h2{
         flex-direction: row;
     }
 
+`
+const ScrollContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-top: 10em;
+
 h3{
     font-family:'Montserrat';
     font-size:${props => props.theme.fontmd};
@@ -66,7 +87,6 @@ h3{
     text-transform: capitalize;
     font-weight: 400;
     margin-bottom: 0;
-    margin-top: 5em;
 }
 `
 
@@ -88,8 +108,12 @@ const CoverVideo = () => {
                 <h1 data-scroll data-scroll-delay="0.03" data-scroll-speed="4">k</h1>
             </div>
             <h2 data-scroll data-scroll-delay="0.03" data-scroll-speed="2">Fast . Secure . No Fees</h2>
+            <ScrollContainer>
+                <Link to="/">
                 <h3 data-scroll-speed="1">Scroll down</h3>
                 <img data-scroll-speed="1" src={ScrollImg} alt="Scroll"/>
+                </Link>
+            </ScrollContainer>
         </Title>
         <video src={MainVideo}     type="video/mp4"  autoPlay muted loop />
     </VideoConntaier>
