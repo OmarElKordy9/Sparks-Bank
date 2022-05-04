@@ -13,8 +13,6 @@ const Home = () => {
   return (
     <Section>
         <CoverVideo/>
-        <h1>Logo</h1>
-        <h1>NavBar</h1>
     </Section>
   )
 }

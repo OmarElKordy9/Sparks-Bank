@@ -4,7 +4,8 @@ import SparksLogo from '../assets/logo.png';
 import  { useState } from "react";
 
 const NavBar = styled.header`
-position: relative;
+position: sticky;
+top:0;
 padding: 1rem 5rem;
 z-index: 500;
 display: flex;
@@ -13,7 +14,6 @@ justify-content: space-between;
 align-items: center;
 color: white;
 background-color: #35353F;
-
 `
 const Logo = styled.a`
 display: flex;

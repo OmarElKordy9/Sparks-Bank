@@ -59,7 +59,7 @@ text-shadow: 1px 1px 1px ${props => props.theme.body};
 }
 
 h2{
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', Sans-Serif;
     font-size: ${props => props.theme.fontlg};
     text-shadow: 1px 1px 1px ${props => props.theme.body};
     text-transform: capitalize;
@@ -81,7 +81,7 @@ text-align: center;
 margin-top: 10em;
 
 h3{
-    font-family:'Montserrat';
+    font-family:'Montserrat', Sans-Serif;
     font-size:${props => props.theme.fontmd};
     text-shadow: 1px 1px 1px ${props => props.theme.body};
     text-transform: capitalize;
