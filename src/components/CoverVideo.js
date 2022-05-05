@@ -5,6 +5,7 @@ import ScrollImg from '../assets/scroll-down.png';
 import "@fontsource/audiowide";
 import { motion } from 'framer-motion';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
+import Header from '../components/Header';
 
 
 const VideoConntaier = styled.section`
@@ -134,29 +135,28 @@ const CoverVideo = () => {
     }
 
   return (
-    <VideoConntaier>
-        <DarkOverlay/>
-        <Title variants ={container} initial="hidden" animate="show">
-            <div>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.12" data-scroll-speed="4">S</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.11" data-scroll-speed="4">p</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.10" data-scroll-speed="4">a</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.09" data-scroll-speed="4">r</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.08" data-scroll-speed="4">k</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.07" data-scroll-speed="4">s</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.06" data-scroll-speed="4">B</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.05" data-scroll-speed="4">a</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.04" data-scroll-speed="4">n</motion.h1>
-                <motion.h1 variants ={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="4">k</motion.h1>
-            </div>
-            <motion.h2 variants ={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="2">Fast . Secure . No Fees</motion.h2>
-            <ScrollContainer onClick={() => handleScroll('.about')}>
-                <motion.h3 variants ={item} data-scroll-speed="1">Scroll down</motion.h3>
-                <motion.img variants ={item} data-scroll-speed="1" src={ScrollImg} alt="Scroll"/>
-            </ScrollContainer>
-        </Title>
-        <video src={MainVideo}     type="video/mp4"  autoPlay muted loop />
-    </VideoConntaier>
+    <><Header /><VideoConntaier>
+          <DarkOverlay />
+          <Title variants={container} initial="hidden" animate="show">
+              <div>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.12" data-scroll-speed="4">S</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.11" data-scroll-speed="4">p</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.10" data-scroll-speed="4">a</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.09" data-scroll-speed="4">r</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.08" data-scroll-speed="4">k</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.07" data-scroll-speed="4">s</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.06" data-scroll-speed="4">B</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.05" data-scroll-speed="4">a</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.04" data-scroll-speed="4">n</motion.h1>
+                  <motion.h1 variants={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="4">k</motion.h1>
+              </div>
+              <motion.h2 variants={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="2">Fast . Secure . No Fees</motion.h2>
+              <ScrollContainer onClick={() => handleScroll('.about')}>
+                  <motion.img variants={item} data-scroll-speed="1" src={ScrollImg} alt="Scroll" />
+              </ScrollContainer>
+          </Title>
+          <video src={MainVideo} type="video/mp4" autoPlay muted loop />
+      </VideoConntaier></>
   )
 }
 

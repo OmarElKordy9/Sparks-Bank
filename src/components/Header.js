@@ -165,10 +165,10 @@ const Header = () => {
         <span />
     </HamBtn>
     <MobileNav clicked={click}>
-        <a href='#home' onClick={() => handleClick()}>Home</a>
-        <a href='.about' onClick={() => handleClick()}>About us</a>
-        <a href='#customers' onClick={() => handleClick()}>Customers</a>
-        <a href='#transactions' onClick={() => handleClick()}>Transactions</a>
+        <a onClick={() => handleScroll('#home')} href='#home'>Home</a>
+        <a onClick={() => handleScroll('.about')} href='.about'>About us</a>
+        <a href='#customers'>Customers</a>
+        <a href='#transactions'>Transactions</a>
     </MobileNav>
     </NavBar>
   )

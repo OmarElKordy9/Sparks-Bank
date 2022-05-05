@@ -80,7 +80,6 @@ display: flex;
 justify-content: space-evenly;
 align-items: center;
 text-align: center;
-
 `
 const SocialMedia = styled.div`
 display: flex;
@@ -89,7 +88,12 @@ align-items: center;
 img{
     width: 40px;
     height: auto;
-    margin-left: 1rem;;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover{
+        transform: scale(1.2);
+    }
 }
 div{
     display: flex;
