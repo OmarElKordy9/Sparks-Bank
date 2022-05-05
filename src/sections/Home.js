@@ -11,7 +11,7 @@ overflow: hidden;
 
 const Home = () => {
   return (
-    <Section>
+    <Section id="home">
         <CoverVideo/>
     </Section>
   )

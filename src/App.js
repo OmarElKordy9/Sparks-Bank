@@ -8,6 +8,7 @@ import Home from "./sections/Home";
 import Header from "./components/Header";
 import { AnimatePresence } from "framer-motion";
 import About from "./sections/About";
+import Footer from "./sections/Footer";
 
 function App() {
   const containerRef = useRef(null);
@@ -35,6 +36,7 @@ function App() {
             <Header />
             <Home />
             <About />
+            <Footer />
           </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>

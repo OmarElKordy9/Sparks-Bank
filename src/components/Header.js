@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SparksLogo from '../assets/logo.png';
 import  { useState } from "react";
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 const NavBar = styled.header`
 position: sticky;
@@ -134,6 +135,20 @@ const Header = () => {
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+
+  const {scroll} = useLocomotiveScroll();
+
+    const handleScroll = (id) => {
+        let element = document.querySelector(id);
+
+        scroll.scrollTo(element,
+            {
+                offset: '-100',
+                duration: '2000',
+                easing: [0.25, 0, 0.35, 1]
+            })
+    }
+
   return (
     <NavBar>
         <Logo>
@@ -141,17 +156,17 @@ const Header = () => {
         <h3>SparksBank</h3>
     </Logo>
     <Nav>
-        <a href='#home'>Home</a>
-        <a href='#about'>About us</a>
-        <a href='#customers'>Customers</a>
-        <a href='#transactions'>Transactions</a>
+        <a onClick={() => handleScroll('#home')} href='#home'>Home</a>
+        <a onClick={() => handleScroll('.about')} href='#about'>About us</a>
+        <a onClick={() => handleScroll('#home')} href='#customers'>Customers</a>
+        <a onClick={() => handleScroll('#home')} href='#transactions'>Transactions</a>
     </Nav>
     <HamBtn onClick={() => handleClick()} clicked={click}>
         <span />
     </HamBtn>
     <MobileNav clicked={click}>
         <a href='#home' onClick={() => handleClick()}>Home</a>
-        <a href='#about' onClick={() => handleClick()}>About us</a>
+        <a href='.about' onClick={() => handleClick()}>About us</a>
         <a href='#customers' onClick={() => handleClick()}>Customers</a>
         <a href='#transactions' onClick={() => handleClick()}>Transactions</a>
     </MobileNav>

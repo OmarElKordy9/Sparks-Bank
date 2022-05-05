@@ -23,7 +23,7 @@ left: 5%;
 z-index: 5;
 `
 const Left = styled.div`
-width: 40%;
+width: 45%;
 font-size: ${props => props.theme.fontlg};
 font-weight: 400;
 z-index: 5;
@@ -45,27 +45,27 @@ img{
 
 .smallImage1{
     position: absolute;
-    right: 95%;
-    bottom: 15%;
+    right: 70%;
+    bottom: 10%;
     width: 40%;
 }
 
 .smallImage2{
     position: absolute;
     left: 85%;
-    bottom: 10%;
+    bottom: 20%;
     width: 40%;
 }
 `
 
 const About = () => {
   return (
-    <Section id='fixed-target'>
+    <Section id='fixed-target' className='about'>
         <Title data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
             About Us
         </Title>
-        <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-            The Sparks Bank was created by OmarElKordy during the internship in
+        <Left >
+            The Sparks Bank was created by OmarElKordy. This website was created during the internship in
             Web Development and Designing at
             <a href='https://www.thesparksfoundationsingapore.org' target="_blank" rel="noreferrer noopener"> The Sparks Foundation </a> 
              in its Graduate Rotational Internship Program (GRIP). It is the largest financial institution in Singapore,
@@ -80,9 +80,9 @@ const About = () => {
             to achieve a mutually beneficial business relationship based on trust and transparency.
         </Left>
         <Right>
-            <img data-scroll data-scroll-speed="1"src={MoneyTransfer} alt="money transfer"/>
-            <img data-scroll data-scroll-speed="5" src={Wallet} alt="wallet" className='smallImage1'/>
-            <img data-scroll data-scroll-speed="-2" src={Handshake} alt="handshake" className='smallImage2'/>
+            <img src={MoneyTransfer} alt="money transfer"/>
+            <img data-scroll data-scroll-speed="0.5" data-scroll-direction="horizontal" src={Wallet} alt="wallet" className='smallImage1'/>
+            <img data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" src={Handshake} alt="handshake" className='smallImage2'/>
         </Right>
     </Section>
   )

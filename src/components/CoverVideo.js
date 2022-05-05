@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import MainVideo from '../assets/visa laptop.mp4';
 import ScrollImg from '../assets/scroll-down.png';
 import "@fontsource/audiowide";
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
+
 
 const VideoConntaier = styled.section`
 width: 100%;
@@ -79,6 +80,7 @@ justify-content: center;
 align-items: center;
 text-align: center;
 margin-top: 10em;
+cursor: pointer;
 
 h3{
     font-family:'Montserrat', Sans-Serif;
@@ -91,7 +93,7 @@ h3{
 
 img{
     width: 40px;
-    height: 40px;
+    height: auto;
 }
 `
 const container = {
@@ -117,6 +119,20 @@ const item = {
 }
 
 const CoverVideo = () => {
+
+    const {scroll} = useLocomotiveScroll();
+
+    const handleScroll = (id) => {
+        let element = document.querySelector(id);
+
+        scroll.scrollTo(element,
+            {
+                offset: '-100',
+                duration: '2000',
+                easing: [0.25, 0, 0.35, 1]
+            })
+    }
+
   return (
     <VideoConntaier>
         <DarkOverlay/>
@@ -134,11 +150,9 @@ const CoverVideo = () => {
                 <motion.h1 variants ={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="4">k</motion.h1>
             </div>
             <motion.h2 variants ={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="2">Fast . Secure . No Fees</motion.h2>
-            <ScrollContainer>
-                <Link to="../sections/About">
+            <ScrollContainer onClick={() => handleScroll('.about')}>
                 <motion.h3 variants ={item} data-scroll-speed="1">Scroll down</motion.h3>
                 <motion.img variants ={item} data-scroll-speed="1" src={ScrollImg} alt="Scroll"/>
-                </Link>
             </ScrollContainer>
         </Title>
         <video src={MainVideo}     type="video/mp4"  autoPlay muted loop />
