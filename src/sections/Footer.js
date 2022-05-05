@@ -35,6 +35,7 @@ align-items: center;
 img{
     width: 5vw;
     height: auto;
+    margin: 3rem;;
 }
 
 h3{
@@ -75,11 +76,16 @@ const Bottom = styled.div`
 width: 70vw;
 padding: 0.5rem, 0;
 margin: 0 4rem;
+margin-bottom: 2rem;
 font-size: ${props => props.theme.fontmd};
 display: flex;
 justify-content: space-evenly;
 align-items: center;
 text-align: center;
+
+.myName{
+    color: yellow;
+}
 `
 const SocialMedia = styled.div`
 display: flex;
@@ -141,7 +147,7 @@ const Footer = () => {
             </ul>
         </FooterComponent>
         <Bottom>
-            <div data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">&copy; {new Date().getFullYear()}. OmarElKordy. All Rights Reserved.</div>
+            <div data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">&copy; {new Date().getFullYear()}. <span className='myName'>OmarElKordy.</span> All Rights Reserved.</div>
             <SocialMedia data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
                 <a href='https://www.linkedin.com/in/omar-elkordy-a38510222' target="_blank" rel="noreferrer noopener"><img src={Linkedin} alt="linkedin"/></a>
                 <a href='https://github.com/OmarElKordy9' target="_blank" rel="noreferrer noopener"><img src={Github} alt="github"/></a>
