@@ -8,9 +8,20 @@ import Home from "./sections/Home";
 import { AnimatePresence } from "framer-motion";
 import About from "./sections/About";
 import Footer from "./sections/Footer";
+import Loader from "./components/Loader";
+import  { useEffect, useState } from "react";
 
 function App() {
   const containerRef = useRef(null);
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+  }, [])
+  
 
   return (
     <>
@@ -30,6 +41,9 @@ function App() {
           }
           containerRef={containerRef}
         >
+          <AnimatePresence>
+          {loaded ? null : <Loader />}
+          </AnimatePresence>
           <AnimatePresence>
           <main data-scroll-container ref={containerRef}>
             <Home />

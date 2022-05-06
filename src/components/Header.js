@@ -93,7 +93,6 @@ display: none;
 }
 `
 const MobileNav = styled.div`
-display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
@@ -108,7 +107,11 @@ background: rgba(53, 53, 63, 0.95);
 border-radius: 20px;
 margin: 0.5rem;
 overflow-x: hidden;
+display: none;
 
+@media only Screen and (max-width: 48em){
+    display: flex;
+}
 a{
     font-weight: 600;
     font-size: ${props => props.theme.fontlg};
@@ -134,13 +137,12 @@ a{
 const Header = () => {
 
   const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
 
   const {scroll} = useLocomotiveScroll();
-
+  const handleClick = () => setClick(!click);
     const handleScroll = (id) => {
         let element = document.querySelector(id);
-
+        setClick(!click);
         scroll.scrollTo(element,
             {
                 offset: '-100',
@@ -150,8 +152,8 @@ const Header = () => {
     }
 
   return (
-    <NavBar>
-        <Logo>
+    <NavBar clicked={click}>
+        <Logo href='/'>
         <img src={SparksLogo} alt="Logo"/>
         <h3>SparksBank</h3>
     </Logo>
