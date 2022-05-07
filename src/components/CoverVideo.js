@@ -30,6 +30,8 @@ z-index: 1;
 background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.6)`}
 `
 const Title = styled(motion.div)`
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
 position: absolute;
 top: 0;
 bottom: 0;
@@ -84,7 +86,7 @@ margin-top: 10em;
 cursor: pointer;
 
 h3{
-    font-family:'Montserrat', Sans-Serif;
+    font-family: 'Montserrat', Sans-Serif;
     font-size:${props => props.theme.fontmd};
     text-shadow: 1px 1px 1px ${props => props.theme.body};
     text-transform: capitalize;
@@ -151,7 +153,7 @@ const CoverVideo = () => {
                   <motion.h1 variants={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="4">k</motion.h1>
               </div>
               <motion.h2 variants={item} data-scroll data-scroll-delay="0.03" data-scroll-speed="2">Fast . Secure . No Fees</motion.h2>
-              <ScrollContainer onClick={() => handleScroll('.about')}>
+              <ScrollContainer onClick={() => handleScroll('#about')}>
                   <motion.img variants={item} data-scroll-speed="1" src={ScrollImg} alt="Scroll" />
               </ScrollContainer>
           </Title>

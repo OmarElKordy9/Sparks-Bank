@@ -1,30 +1,23 @@
 import { ThemeProvider } from "styled-components";
-import { dark } from "./Styles/Themes";
-import GlobalStyles from "./Styles/GlobalStyles";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { dark } from "../Styles/Themes";
+import GlobalStyles from "../Styles/GlobalStyles";
 import { useRef } from "react";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import 'locomotive-scroll/dist/locomotive-scroll.css'
-import Home from "./sections/Home";
 import { AnimatePresence } from "framer-motion";
-import About from "./sections/About";
-import Footer from "./sections/Footer";
-import Loader from "./components/Loader";
-import  { useEffect, useState } from "react";
-// import Users from "./sections/Users";
-// import Transactions from "./sections/Transactions";
+import Footer from "../sections/Footer";
+import styled from "styled-components";
+import Header from "../components/Header";
 
-function App() {
+const Section = styled.section`
+position: relative;
+min-height: 100vh;
+overflow: hidden;
+background-color: #19191B;
+`
+
+const Users = () => {
   const containerRef = useRef(null);
-
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 3000);
-  }, [])
-  
-
   return (
     <>
       <GlobalStyles />
@@ -44,21 +37,17 @@ function App() {
           containerRef={containerRef}
         >
           <AnimatePresence>
-          {loaded ? null : <Loader />}
-          </AnimatePresence>
-          <AnimatePresence>
           <main data-scroll-container ref={containerRef}>
-            <Home />
-            <About />
+            <Section >
+            <Header />
             <Footer />
-            {/* <Users />
-            <Transactions /> */}
+            </Section>
           </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
       </ThemeProvider>
     </>
-  );
+  )
 }
 
-export default App;
+export default Users

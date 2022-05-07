@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import SparksLogo from '../assets/logo.png';
 import  { useState } from "react";
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
+import { Link } from 'react-router-dom';
+
 
 const NavBar = styled.header`
+font-family: 'Montserrat', sans-serif;
 position: sticky;
 top:0;
 padding: 1rem 5rem;
@@ -31,18 +34,23 @@ img{
 const Nav = styled.nav`
 width: 25rem;
 max-width: 40rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
 
 @media only Screen and (max-width: 48em){
     display: none;
 }
 
-a{
+ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
     font-weight: 600;
     color: white;
     line-height: 1.5;
+    cursor: pointer;
 
     &::after{
         content: "";
@@ -112,11 +120,12 @@ display: none;
 @media only Screen and (max-width: 48em){
     display: flex;
 }
-a{
+li{
     font-weight: 600;
     font-size: ${props => props.theme.fontlg};
     margin: 1.5rem;
     cursor: pointer;
+    list-style-type: none;
 
     &::after{
         content: "";
@@ -158,19 +167,37 @@ const Header = () => {
         <h3>SparksBank</h3>
     </Logo>
     <Nav>
-        <a onClick={() => handleScroll('#home')} href='#home'>Home</a>
-        <a onClick={() => handleScroll('.about')} href='#about'>About us</a>
-        <a onClick={() => handleScroll('#home')} href='#customers'>Customers</a>
-        <a onClick={() => handleScroll('#home')} href='#transactions'>Transactions</a>
+        <ul>
+            <li>
+                <Link to='/'>Home</Link>
+            </li>
+            <li onClick={() => handleScroll('#about')}>
+                About us
+            </li>
+            <li>
+                <Link to='/users'>Users</Link>
+            </li>
+            <li>
+                <Link to='/transactions'>Transactions</Link>
+            </li>
+        </ul>
     </Nav>
     <HamBtn onClick={() => handleClick()} clicked={click}>
         <span />
     </HamBtn>
     <MobileNav clicked={click}>
-        <a onClick={() => handleScroll('#home')} href='#home'>Home</a>
-        <a onClick={() => handleScroll('.about')} href='.about'>About us</a>
-        <a href='#customers'>Customers</a>
-        <a href='#transactions'>Transactions</a>
+            <li>
+                <Link to='/'>Home</Link>
+            </li>
+            <li onClick={() => handleScroll('#about')}>
+                About us
+            </li>
+            <li>
+                <Link to='/users'>Users</Link>
+            </li>
+            <li>
+                <Link to='/transactions'>Transactions</Link>
+            </li>
     </MobileNav>
     </NavBar>
   )

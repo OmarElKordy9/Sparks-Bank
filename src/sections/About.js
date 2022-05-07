@@ -60,7 +60,7 @@ img{
 
 const About = () => {
   return (
-    <Section id='fixed-target' className='about'>
+    <Section id='about'>
         <Title data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
             About Us
         </Title>

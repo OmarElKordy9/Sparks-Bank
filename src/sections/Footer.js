@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import SparksLogo from '../assets/logo.png';
 import Linkedin from '../assets/linkedin.svg';
 import Github from '../assets/github.svg';
+import { Link } from 'react-router-dom';
 
 
 const Section = styled.section`
@@ -57,6 +58,12 @@ ul{
     padding: 0 1rem;
     border-top: 1px solid;
     border-bottom: 1px solid;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 li{
@@ -140,10 +147,18 @@ const Footer = () => {
         transition={{duration:1.5}}
         >
             <ul>
-                <li onClick={() => handleScroll('#home')}>Home</li>
-                <li onClick={() => handleScroll('.about')}>About Us</li>
-                <li onClick={() => handleScroll('#home')}>Customers</li>
-                <li onClick={() => handleScroll('#home')}>Transactions</li>
+            <li>
+                <Link to='/'>Home</Link>
+            </li>
+            <li onClick={() => handleScroll('#about')}>
+                About us
+            </li>
+            <li>
+                <Link to='/users'>Users</Link>
+            </li>
+            <li>
+                <Link to='/transactions'>Transactions</Link>
+            </li>
             </ul>
         </FooterComponent>
         <Bottom>
