@@ -8,6 +8,9 @@ import { AnimatePresence } from "framer-motion";
 import Footer from "../sections/Footer";
 import styled from "styled-components";
 import Header from "../components/Header";
+import UsersList from "../components/UsersList";
+import MakeTransaction from "../components/MakeTransaction";
+import CreateUser from "../components/CreateUser";
 
 const Section = styled.section`
 position: relative;
@@ -40,6 +43,9 @@ const Users = () => {
           <main data-scroll-container ref={containerRef}>
             <Section >
             <Header />
+            <UsersList />
+            <MakeTransaction />
+            <CreateUser />
             <Footer />
             </Section>
           </main>
