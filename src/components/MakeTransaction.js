@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const Section = styled.section`
   position: relative;
@@ -35,6 +36,10 @@ const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   font-size: ${(props) => props.theme.fontmd};
+
+  select{
+      cursor: pointer;
+  }
 
   select,
   input {
@@ -92,10 +97,16 @@ export default class MakeTransaction extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      users: ["test user"],
-      from: "test user",
-    });
+      axios.get('http://localhost:8000/users/')
+      .then(response => {
+          if (response.data.length > 0){
+              this.setState({
+                  users: response.data.map(user => user.username),
+                  username: response.data[0].username
+              })
+          }
+      })
+
     this.focusTextInput();
   }
 
@@ -127,6 +138,9 @@ export default class MakeTransaction extends Component {
     };
 
     console.log(transaction);
+
+    axios.post('http://localhost:8000/transactions/add',  transaction)
+    .then(res => console.log(res.data));
 
     window.location = "/transactions";
   }

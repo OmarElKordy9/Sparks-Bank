@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import axios from 'axios';
 
 const Section = styled.section`
   position: relative;
@@ -127,6 +128,9 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
+    axios.post('http://localhost:8000/users/add',  user)
+    .then(res => console.log(res.data));
+
     this.setState({
       username: "",
       email: "",
@@ -167,7 +171,7 @@ export default class CreateUser extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <label>Account Number: </label>
+            <label>Account Number (exactly 6  numbers): </label>
             <input
               type="tel"
               required
@@ -179,7 +183,7 @@ export default class CreateUser extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <label>Balance: </label>
+            <label>Balance $: </label>
             <input
               type="number"
               required
