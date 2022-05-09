@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 const NavBar = styled.header`
 font-family: 'Montserrat', sans-serif;
-position: sticky;
 top:0;
 padding: 1rem 5rem;
 z-index: 500;
