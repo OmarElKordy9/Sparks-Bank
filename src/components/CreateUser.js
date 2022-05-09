@@ -137,6 +137,8 @@ export default class CreateUser extends Component {
       accountNo: "",
       balance: "",
     });
+
+    window.location = "/users";
   }
 
   render() {

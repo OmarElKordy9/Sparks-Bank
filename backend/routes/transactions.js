@@ -1,5 +1,6 @@
 const router = require('express').Router();
-let Transaction = require('../models/transaction');
+const Transaction = require('../models/transaction');
+const User = require('../models/user')
 
 router.route('/').get((req, res) => {
     Transaction.find()
@@ -7,20 +8,36 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post((req, res) => {
+router.route('/add').post(async (req, res) => {
     const from = req.body.from;
     const to = req.body.to;
     const amount = Number(req.body.amount);
 
-    const newTransaction = new Transaction ({
-        from,
-        to,
-        amount,
-    });
-
-    newTransaction.save()
-    .then(() => res.json('Transaction added !'))
-    .catch(err => res.status(400).json('Error: ' + err));
+    try{
+        var fromUser =  await User.findOne({username: from})
+        var toUser = await User.findOne({username:to})
+    }catch(error){
+        console.log(error)
+    }
+    var fromBalance = fromUser.balance
+    var toBalance = toUser.balance
+    if(fromBalance<amount || amount <= 0){
+        res.status(400).json('Error: No Sufficient Amount!');
+    }else{
+    
+        var updatedFromBalance=fromBalance-amount;
+        var updatedToBalance= toBalance+amount;
+        try {
+            var newTransaction=await Transaction.create({from,to,amount})
+            var updatedFromUser= await User.findOneAndUpdate({username:from},{balance:updatedFromBalance})
+            var updatedToUser = await User.findOneAndUpdate({username:to},{balance:updatedToBalance})
+        } catch (error) {
+            console.log(error)
+            res.status(400).json('Something has happened when updating user')
+        }
+       
+        res.status(201).json({transaction:newTransaction, updatedFrom: updatedFromUser, updatedTo:updatedToUser})
+    }
 });
 
 router.route('/:id').get((req, res) => {

@@ -197,7 +197,7 @@ export default class MakeTransaction extends Component {
           <FormGroup>
             <label>Amount $: </label>
             <input
-              type="text"
+              type="number"
               required
               className="formControl"
               value={this.state.amount}

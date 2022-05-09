@@ -24,7 +24,8 @@ const Title = styled.h1`
   font-size: ${(props) => props.theme.fontxxl};
   font-family: "Audiowide";
   font-weight: 300;
-  position: absolute;
+  position: relative;
+  margin-bottom: 1em;
   top: 1rem;
   left: 6%;
   z-index: 5;
