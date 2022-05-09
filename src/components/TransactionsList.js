@@ -39,6 +39,7 @@ border-radius: 10px;
 overflow: hidden;
 width: 85%;
 position: relative;
+margin: auto;
 `
 const TableHead = styled.thead`
 background-color: yellow;
