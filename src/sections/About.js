@@ -12,6 +12,20 @@ width: 80vw;
 display: flex;
 flex-direction: row;
 margin: 0 auto;
+margin-bottom: 0;
+
+@media only Screen and (max-width: 70em){
+    min-height: 90vh;
+}
+@media only Screen and (max-width: 55em){
+    min-height: 80vh;
+}
+@media only Screen and (max-width: 41em){
+    min-height: 70vh;
+}
+@media only Screen and (max-width: 35em){
+    min-height: 60vh;
+    }
 `
 const Title = styled.h1`
 font-size: ${props => props.theme.fontxxxl};
@@ -21,6 +35,16 @@ position: absolute;
 top: 1rem;
 left: 5%;
 z-index: 5;
+
+@media only Screen and (max-width: 70em){
+    font-size: 4rem;
+}
+@media only Screen and (max-width: 55em){
+    font-size: 3rem;
+}
+@media only Screen and (max-width: 35em){
+    font-size: 2rem;
+    }
 `
 const Left = styled.div`
 width: 45%;
@@ -29,6 +53,24 @@ font-weight: 400;
 z-index: 5;
 position: relative;
 margin-top:20%;
+padding: 0;
+
+@media only Screen and (max-width: 70em){
+    font-size: 1.15em;
+    width: 55%;
+}
+@media only Screen and (max-width: 55em){
+    font-size: 1em;
+    width: 60%;
+}
+@media only Screen and (max-width: 41em){
+    font-size: .95rem;
+    width: 60%;
+}
+@media only Screen and (max-width: 35em){
+    font-size: .85rem;
+    width: 60%;
+}
 
 a{
     color: yellow;
@@ -43,11 +85,23 @@ img{
     height: auto;
 }
 
+.bigImage{
+    position: absolute;
+    top:10%;
+@media only Screen and (max-width: 35em){
+    top: 20%;
+}
+}
+
 .smallImage1{
     position: absolute;
     right: 70%;
     bottom: 10%;
     width: 40%;
+
+@media only Screen and (max-width: 70em){
+    bottom: 20%;
+}
 }
 
 .smallImage2{
@@ -55,6 +109,10 @@ img{
     left: 85%;
     bottom: 20%;
     width: 40%;
+
+@media only Screen and (max-width: 70em){
+    bottom: 30%;
+}
 }
 `
 
@@ -80,7 +138,7 @@ const About = () => {
             to achieve a mutually beneficial business relationship based on trust and transparency.
         </Left>
         <Right>
-            <img src={MoneyTransfer} alt="money transfer"/>
+            <img className='bigImage' src={MoneyTransfer} alt="money transfer"/>
             <img data-scroll data-scroll-speed="0.5" data-scroll-direction="horizontal" src={Wallet} alt="wallet" className='smallImage1'/>
             <img data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" src={Handshake} alt="handshake" className='smallImage2'/>
         </Right>

@@ -10,6 +10,7 @@ import About from "./sections/About";
 import Footer from "./sections/Footer";
 import Loader from "./components/Loader";
 import  { useEffect, useState } from "react";
+import Header from "./components/Header";
 // import Users from "./sections/Users";
 // import Transactions from "./sections/Transactions";
 
@@ -48,11 +49,10 @@ function App() {
           </AnimatePresence>
           <AnimatePresence>
           <main data-scroll-container ref={containerRef}>
+          <Header />
             <Home />
             <About />
             <Footer />
-            {/* <Users />
-            <Transactions /> */}
           </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>

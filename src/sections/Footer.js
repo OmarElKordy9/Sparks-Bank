@@ -26,6 +26,16 @@ position: absolute;
 top: 1rem;
 left: 5%;
 z-index: 5;
+
+@media only Screen and (max-width: 70em){
+    font-size: 4rem;
+}
+@media only Screen and (max-width: 55em){
+    font-size: 3rem;
+}
+@media only Screen and (max-width: 35em){
+    font-size: 2rem;
+    }
 `
 const Logo = styled.div`
 display: flex;
@@ -36,12 +46,20 @@ align-items: center;
 img{
     width: 5vw;
     height: auto;
-    margin: 3rem;;
+    margin: 3rem;
+
+@media only Screen and (max-width: 70em){
+    margin-top: 4rem;
+}
 }
 
 h3{
     font-size: ${props => props.theme.fontlg};
     font-family: 'Audiowide';
+
+@media only Screen and (max-width: 70em){
+    font-size: ${props => props.theme.fontmd};
+}
 }
 `
 const FooterComponent = styled(motion.footer)`
@@ -73,6 +91,23 @@ li{
     cursor: pointer;
     transition: all 0.3s ease;
 
+ @media only Screen and (max-width: 54em){
+    font-size: ${props => props.theme.fontxs};
+}
+@media only Screen and (max-width: 46em){
+    font-size: ${props => props.theme.fontxs};
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+@media only Screen and (max-width: 40em){
+    font-size: ${props => props.theme.fontxs};
+    padding-left: 0.3rem;
+}
+@media only Screen and (max-width: 30em){
+    font-size: ${props => props.theme.fontxs};
+    padding-left: 0.1rem;
+}
+
     &:hover{
         transform: scale(1.1);
         font-weight: 500;
@@ -90,6 +125,14 @@ justify-content: space-evenly;
 align-items: center;
 text-align: center;
 
+.copyrights{
+    font-size: ${props => props.theme.fontmd};
+
+    @media only Screen and (max-width: 39em){
+    font-size: ${props => props.theme.fontsm};
+}
+}
+
 .myName{
     color: yellow;
 }
@@ -99,10 +142,14 @@ display: flex;
 align-items: center;
 
 img{
-    width: 40px;
+    width: 2.5em;
     height: auto;
     margin-left: 1rem;
     transition: all 0.3s ease;
+
+@media only Screen and (max-width: 70em){
+    width: 1.875em;
+}
 
     &:hover{
         transform: scale(1.2);
@@ -162,7 +209,7 @@ const Footer = () => {
             </ul>
         </FooterComponent>
         <Bottom>
-            <div data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">&copy; {new Date().getFullYear()}. <span className='myName'>OmarElKordy.</span> All Rights Reserved.</div>
+            <div className='copyrights' data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">&copy; {new Date().getFullYear()}. <span className='myName'>OmarElKordy.</span> All Rights Reserved.</div>
             <SocialMedia data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
                 <a href='https://www.linkedin.com/in/omar-elkordy-a38510222' target="_blank" rel="noreferrer noopener"><img src={Linkedin} alt="linkedin"/></a>
                 <a href='https://github.com/OmarElKordy9' target="_blank" rel="noreferrer noopener"><img src={Github} alt="github"/></a>

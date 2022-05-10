@@ -21,7 +21,11 @@ const Title = styled.h1`
   top: 1rem;
   left: 6%;
   z-index: 5;
-`;
+
+  @media only Screen and (max-width: 37em){
+    font-size: 2rem;
+    }
+`
 const Form = styled.form`
   font-family: "Montserrat";
   font-weight: 400;

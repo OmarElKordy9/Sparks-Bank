@@ -5,7 +5,6 @@ import ScrollImg from '../assets/scroll-down.png';
 import "@fontsource/audiowide";
 import { motion } from 'framer-motion';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
-import Header from '../components/Header';
 
 
 const VideoConntaier = styled.section`
@@ -60,6 +59,9 @@ text-shadow: 1px 1px 1px ${props => props.theme.body};
 @media only Screen and (max-width: 41em){
     font-size: 5rem;
 }
+@media only Screen and (max-width: 35em){
+    font-size: 3rem;
+}
 }
 
 h2{
@@ -68,6 +70,10 @@ h2{
     text-shadow: 1px 1px 1px ${props => props.theme.body};
     text-transform: capitalize;
     font-weight: 500;
+
+@media only Screen and (max-width: 35em){
+    font-size: 1rem;
+}
     }
 
     div{
@@ -137,7 +143,8 @@ const CoverVideo = () => {
     }
 
   return (
-    <><Header /><VideoConntaier>
+    <>
+    <VideoConntaier>
           <DarkOverlay />
           <Title variants={container} initial="hidden" animate="show">
               <div>

@@ -29,6 +29,10 @@ const Title = styled.h1`
   top: 1rem;
   left: 6%;
   z-index: 5;
+
+  @media only Screen and (max-width: 37em){
+    font-size: 2rem;
+    }
 `
 const TableContainer = styled.div`
 overflow-x: auto;
@@ -42,6 +46,13 @@ overflow: hidden;
 width: 85%;
 position: relative;
 margin: auto;
+
+@media only Screen and (max-width: 39em){
+    font-size: ${props => props.theme.fontsm};
+}
+@media only Screen and (max-width: 32em){
+    font-size: ${props => props.theme.fontxs};
+}
 `
 const TableHead = styled.thead`
 background-color: yellow;
