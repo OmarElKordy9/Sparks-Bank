@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import React from 'react'
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import styled from 'styled-components'
 import SparksLogo from '../assets/logo.png';
 import Linkedin from '../assets/linkedin.svg';
@@ -167,18 +166,6 @@ div{
 
 const Footer = () => {
 
-    const {scroll} = useLocomotiveScroll();
-
-    const handleScroll = (id) => {
-        let element = document.querySelector(id);
-
-        scroll.scrollTo(element,
-            {
-                offset: '-100',
-                duration: '2000',
-                easing: [0.25, 0, 0.35, 1]
-            })
-    }
 
   return (
     <Section>
