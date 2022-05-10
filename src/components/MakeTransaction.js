@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 const Section = styled.section`
   position: relative;
@@ -140,9 +141,22 @@ export default class MakeTransaction extends Component {
     console.log(transaction);
 
     axios.post('http://localhost:8000/transactions/add',  transaction)
-    .then(res => console.log(res.data));
-
-    window.location = "/transactions";
+    .then(res => Swal.fire({
+      title: "Success",
+      text: "Transaction made successfully",
+      icon: "success",
+      confirmButtonColor: "#00D100",})
+      .then(okay => {
+        if (okay){
+          window.location = "/transactions";
+        }
+  }))
+    .catch(err => Swal.fire({
+      icon: 'error',
+      title: 'Error !' ,
+      text: 'Account balance insufficient !',
+      confirmButtonColor: "#D33",
+    }));
   }
 
   render() {

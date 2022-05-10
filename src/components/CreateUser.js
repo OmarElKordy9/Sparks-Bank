@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import axios from 'axios';
+import Swal from 'sweetalert2'
 
 const Section = styled.section`
   position: relative;
@@ -129,7 +130,21 @@ export default class CreateUser extends Component {
     console.log(user);
 
     axios.post('http://localhost:8000/users/add',  user)
-    .then(res => console.log(res.data));
+    .then(res => Swal.fire({
+      title: "Success",
+      text: "User created successfully",
+      icon: "success"})
+      .then(okay => {
+        if (okay){
+          window.location = "/users";
+        }
+  }))
+    .catch(err => Swal.fire({
+      icon: 'error',
+      title: 'Error !' ,
+      text: 'User already exists !',
+      confirmButtonColor: "#D33",
+    }));
 
     this.setState({
       username: "",
@@ -137,8 +152,6 @@ export default class CreateUser extends Component {
       accountNo: "",
       balance: "",
     });
-
-    window.location = "/users";
   }
 
   render() {
