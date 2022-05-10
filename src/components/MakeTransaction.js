@@ -27,7 +27,7 @@ const Title = styled.h1`
     }
 `
 const Form = styled.form`
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@ const FormGroup = styled.div`
   select,
   input {
     height: 2em;
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     width: 60vw;
     font-size: ${(props) => props.theme.fontxs};
   }
