@@ -64,6 +64,8 @@ h3{
 `
 const FooterComponent = styled(motion.footer)`
 width: 80vw;
+margin-left: auto;
+margin-right: auto;
 
 ul{
     list-style-type:  none;
@@ -196,9 +198,6 @@ const Footer = () => {
             <ul>
             <li>
                 <Link to='/'>Home</Link>
-            </li>
-            <li onClick={() => handleScroll('#about')}>
-                About us
             </li>
             <li>
                 <Link to='/users'>Users</Link>

@@ -11,8 +11,6 @@ import Footer from "./sections/Footer";
 import Loader from "./components/Loader";
 import  { useEffect, useState } from "react";
 import Header from "./components/Header";
-// import Users from "./sections/Users";
-// import Transactions from "./sections/Transactions";
 
 function App() {
   const containerRef = useRef(null);

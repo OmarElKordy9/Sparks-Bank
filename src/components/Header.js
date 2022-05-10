@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import SparksLogo from '../assets/logo.png';
 import  { useState } from "react";
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import { Link } from 'react-router-dom';
 
 
@@ -147,18 +146,7 @@ const Header = () => {
 
   const [click, setClick] = useState(false);
 
-  const {scroll} = useLocomotiveScroll();
   const handleClick = () => setClick(!click);
-    const handleScroll = (id) => {
-        let element = document.querySelector(id);
-        setClick(!click);
-        scroll.scrollTo(element,
-            {
-                offset: '-100',
-                duration: '2000',
-                easing: [0.25, 0, 0.35, 1]
-            })
-    }
 
   return (
     <NavBar clicked={click}>
@@ -170,9 +158,6 @@ const Header = () => {
         <ul>
             <li>
                 <Link to='/'>Home</Link>
-            </li>
-            <li onClick={() => handleScroll('#about')}>
-                About us
             </li>
             <li>
                 <Link to='/users'>Users</Link>
@@ -188,9 +173,6 @@ const Header = () => {
     <MobileNav clicked={click}>
             <li>
                 <Link to='/'>Home</Link>
-            </li>
-            <li onClick={() => handleScroll('#about')}>
-                About us
             </li>
             <li>
                 <Link to='/users'>Users</Link>
