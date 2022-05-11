@@ -18,8 +18,8 @@ connection.once('open', () => {
     console.log("MongoDB connections established successfully");
 })
 
-const transactionsRouter = require('../backend/routes/transactions');
-const usersRouter = require('../backend/routes/users');
+const transactionsRouter = require('./routes/transactions');
+const usersRouter = require('./routes/users');
 
 app.use('/transactions', transactionsRouter);
 app.use('/users', usersRouter);
