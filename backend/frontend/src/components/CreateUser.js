@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import axios from 'axios';
+// import axios from 'axios';
 import Swal from 'sweetalert2'
+import { axiosInstance } from "../../config";
 
 const Section = styled.section`
   position: relative;
@@ -133,7 +134,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:8000/users/add',  user)
+    axiosInstance.post('/users/add',  user)
     .then(res => Swal.fire({
       title: "Success",
       text: "User created successfully",

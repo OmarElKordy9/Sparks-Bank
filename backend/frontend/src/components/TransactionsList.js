@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import axios from 'axios';
+// import axios from 'axios';
+import { axiosInstance } from '../../config';
 
 const Transaction = props => (
   <tr>
@@ -100,7 +101,7 @@ export default class TransactionsList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8000/transactions/')
+    axiosInstance.get('/transactions/')
     .then(response => {
       this.setState({transactions: response.data})
     })

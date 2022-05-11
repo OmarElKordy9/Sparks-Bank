@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import axios from 'axios';
+// import axios from 'axios';
+import { axiosInstance } from '../../config';
 
 const User = props => (
   <tr>
@@ -101,7 +102,7 @@ export default class UsersList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8000/users/')
+    axiosInstance.get('/users/')
     .then(response => {
       this.setState({users: response.data})
     })

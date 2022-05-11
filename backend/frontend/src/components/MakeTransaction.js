@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import axios from "axios";
+// import axios from "axios";
 import Swal from 'sweetalert2'
+import { axiosInstance } from "../../config";
 
 const Section = styled.section`
   position: relative;
@@ -102,7 +103,7 @@ export default class MakeTransaction extends Component {
   }
 
   componentDidMount() {
-      axios.get('http://localhost:8000/users/')
+      axiosInstance.get('/users/')
       .then(response => {
           if (response.data.length > 0){
               this.setState({
@@ -144,7 +145,7 @@ export default class MakeTransaction extends Component {
 
     console.log(transaction);
 
-    axios.post('http://localhost:8000/transactions/add',  transaction)
+    axiosInstance.post('/transactions/add',  transaction)
     .then(res => Swal.fire({
       title: "Success",
       text: "Transaction made successfully",
