@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 // import axios from "axios";
 import Swal from 'sweetalert2'
-import { axiosInstance } from "../../config";
+import { axiosInstance } from "../config";
 
 const Section = styled.section`
   position: relative;
