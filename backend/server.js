@@ -26,7 +26,7 @@ const port = process.env.PORT || 8000;
 
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://sparksbank--kordy.herokuapp.com");
+  res.setHeader("Access-Control-Allow-Origin", "https://kordy-sparksbank.herokuapp.com");
   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
   if (req.method == "OPTIONS") {
     return res.sendStatus(200);
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 // app.use(cors());
 
 const corsOption = {
-  origin: ['https://sparksbank--kordy.herokuapp.com'],
+  origin: ['https://kordy-sparksbank.herokuapp.com'],
 };
 app.use(cors(corsOption));
 app.use(express.json());
