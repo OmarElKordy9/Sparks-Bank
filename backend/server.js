@@ -5,8 +5,10 @@ const path = require('path');
 
 require('dotenv').config();
 
+const app = express();
+
 var corsOptions = {
-  origin: 'http://example.com',
+  origin: 'https://kordy-sparksbank.herokuapp.com',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
  
@@ -22,7 +24,6 @@ app.listen(80, function () {
 })
 
 
-// const app = express();
 // app.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", "https://sparksbank--kordy.herokuapp.com");
 //   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
