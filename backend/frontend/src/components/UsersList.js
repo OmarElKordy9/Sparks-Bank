@@ -102,7 +102,7 @@ export default class UsersList extends Component {
   }
 
   componentDidMount() {
-    axiosInstance.get('/user/')
+    axiosInstance.get('/users/')
     .then(response => {
       this.setState({users: response.data})
     })

@@ -101,7 +101,7 @@ export default class TransactionsList extends Component {
   }
 
   componentDidMount() {
-    axiosInstance.get('/transaction/')
+    axiosInstance.get('/transactions/')
     .then(response => {
       this.setState({transactions: response.data})
     })

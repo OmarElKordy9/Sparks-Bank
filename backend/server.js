@@ -21,8 +21,8 @@ connection.once('open', () => {
 const transactionsRouter = require('./routes/transactions');
 const usersRouter = require('./routes/users');
 
-app.use('/transaction', transactionsRouter);
-app.use('/user', usersRouter);
+app.use('/api/transactions', transactionsRouter);
+app.use('/api/users', usersRouter);
 
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 
