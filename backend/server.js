@@ -6,6 +6,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
+const port = process.env.PORT || 8000;
 
 var corsOptions = {
   origin: 'https://kordy-sparksbank.herokuapp.com',
@@ -19,7 +20,7 @@ app.get('/users', cors(corsOptions), function (req, res, next) {
   res.json({msg: 'This is CORS-enabled for only example.com.'})
 })
  
-app.listen(80, function () {
+app.listen(port, function () {
   console.log('CORS-enabled web server listening on port 80')
 })
 
@@ -32,8 +33,6 @@ app.listen(80, function () {
 //   }
 //   next();
 // });
-
-// const port = process.env.PORT || 8000;
 
 // // app.use(cors());
 
@@ -62,6 +61,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/frontend/build', 'index.html'));
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`Server is running on port: ${port}`);
+// });
