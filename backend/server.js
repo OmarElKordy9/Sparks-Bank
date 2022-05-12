@@ -5,24 +5,41 @@ const path = require('path');
 
 require('dotenv').config();
 
-const app = express();
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://sparksbank--kordy.herokuapp.com");
-  res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
-  if (req.method == "OPTIONS") {
-    return res.sendStatus(200);
-  }
-  next();
-});
+var corsOptions = {
+  origin: 'http://example.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+ 
+app.get('/transactions', cors(corsOptions), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for only example.com.'})
+})
+app.get('/users', cors(corsOptions), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for only example.com.'})
+})
+ 
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
 
-const port = process.env.PORT || 8000;
 
-// app.use(cors());
+// const app = express();
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "https://sparksbank--kordy.herokuapp.com");
+//   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
+//   if (req.method == "OPTIONS") {
+//     return res.sendStatus(200);
+//   }
+//   next();
+// });
 
-const corsOption = {
-  origin: ['https://sparksbank--kordy.herokuapp.com/'],
-};
-app.use(cors(corsOption));
+// const port = process.env.PORT || 8000;
+
+// // app.use(cors());
+
+// const corsOption = {
+//   origin: ['https://sparksbank--kordy.herokuapp.com/'],
+// };
+// app.use(cors(corsOption));
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
