@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.setHeader("Access-Control-Allow-Origin", "https://sparksbank--kordy.herokuapp.com");
   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
   if (req.method == "OPTIONS") {
     return res.sendStatus(200);
