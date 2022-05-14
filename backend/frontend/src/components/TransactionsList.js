@@ -12,6 +12,7 @@ const Transaction = props => (
 )
 
 const Section = styled.section`
+  font-family: 'Montserrat', Sans-Serif;
   position: relative;
   min-height: 50vh;
   width: 80vw;

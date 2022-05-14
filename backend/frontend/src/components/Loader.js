@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 
 const Container = styled(motion.div)`
+font-family: 'Montserrat', Sans-Serif;
 position: absolute;
 top: 0;
 left: 0;

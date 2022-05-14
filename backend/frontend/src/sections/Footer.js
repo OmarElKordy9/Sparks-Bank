@@ -5,9 +5,11 @@ import SparksLogo from '../assets/logo.png';
 import Linkedin from '../assets/linkedin.svg';
 import Github from '../assets/github.svg';
 import { Link } from 'react-router-dom';
+import "@fontsource/montserrat";
 
 
 const Section = styled.section`
+font-family: 'Montserrat', Sans-Serif;
 min-height: 40vh;
 width: 100vw;
 margin: 5rem auto;
@@ -67,6 +69,7 @@ margin-left: auto;
 margin-right: auto;
 
 ul{
+    font-family: 'Montserrat', Sans-Serif;
     list-style-type:  none;
     display: flex;
     flex-wrap: wrap;
@@ -86,6 +89,7 @@ a{
 }
 
 li{
+    font-family: 'Montserrat', Sans-Serif;
     padding: 2rem;
     font-size: ${props => props.theme.fontmd};
     text-transform: uppercase;
@@ -116,6 +120,7 @@ li{
 }
 `
 const Bottom = styled.div`
+font-family: 'Montserrat', Sans-Serif;
 width: 70vw;
 padding: 0.5rem, 0;
 margin: 0 4rem;

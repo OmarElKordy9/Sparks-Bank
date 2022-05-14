@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SparksLogo from '../assets/logo.png';
 import  { useState } from "react";
 import { Link } from 'react-router-dom';
+import "@fontsource/montserrat";
 
 
 const NavBar = styled.header`

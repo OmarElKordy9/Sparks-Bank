@@ -6,6 +6,7 @@ import Wallet from '../assets/wallet.png';
 
 
 const Section = styled.section`
+font-family: 'Montserrat', Sans-Serif;
 position: relative;
 min-height: 100vh;
 width: 80vw;
@@ -47,6 +48,7 @@ z-index: 5;
     }
 `
 const Left = styled.div`
+font-family: 'Montserrat', Sans-Serif;
 width: 45%;
 font-size: ${props => props.theme.fontlg};
 font-weight: 400;

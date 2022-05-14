@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import MainVideo from '../assets/visa laptop.mp4';
 import ScrollImg from '../assets/scroll-down.png';
 import "@fontsource/audiowide";
+import "@fontsource/montserrat";
 import { motion } from 'framer-motion';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
