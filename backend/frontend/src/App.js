@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 3000);
+    }, 500);
   }, [])
   
 
@@ -47,7 +47,7 @@ function App() {
           </AnimatePresence>
           <AnimatePresence>
           <main data-scroll-container ref={containerRef}>
-          <Header />
+            <Header />
             <Home />
             <About />
             <Footer />
