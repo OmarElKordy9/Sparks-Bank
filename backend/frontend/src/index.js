@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from './App';
 import About from './sections/About';
+import Home from './sections/Home';
 import Transactions from './sections/Transactions';
 import Users from './sections/Users';
 // import reportWebVitals from './reportWebVitals';
@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<App />}/>
+      <Route path='/' element={<Home />}/>
       <Route path='/users' element={<Users />}/>
       <Route path='/transactions' element={<Transactions />}/>
       <Route path='/about' element={<About />}/>
