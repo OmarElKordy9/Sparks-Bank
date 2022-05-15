@@ -61,7 +61,7 @@ color: black;
 display: table-header-group;
 vertical-align: middle;
 text-align: center;
-height: 10em;
+height: 3em;
 
 tr{
 display: table-row;

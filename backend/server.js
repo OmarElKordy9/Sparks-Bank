@@ -8,23 +8,6 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 8000;
 
-// var corsOptions = {
-//   origin: 'https://kordy-sparksbank.herokuapp.com',
-//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// }
- 
-// app.get('/transactions', cors(corsOptions), function (req, res, next) {
-//   res.json({msg: 'This is CORS-enabled for only example.com.'})
-// })
-// app.get('/users', cors(corsOptions), function (req, res, next) {
-//   res.json({msg: 'This is CORS-enabled for only example.com.'})
-// })
- 
-// app.listen(port, function () {
-//   console.log('CORS-enabled web server listening on port 80')
-// })
-
-
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://kordy-sparksbank.herokuapp.com");
   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
@@ -34,7 +17,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use(cors());
 
 const corsOption = {
   origin: ['https://kordy-sparksbank.herokuapp.com'],
