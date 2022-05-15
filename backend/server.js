@@ -8,6 +8,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 8000;
 
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://kordy-sparksbank.herokuapp.com");
   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// app.use(cors());
 
 const corsOption = {
   origin: ['https://kordy-sparksbank.herokuapp.com'],
